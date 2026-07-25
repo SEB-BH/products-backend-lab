@@ -24,7 +24,3 @@ You will create the Product model, build CRUD API endpoints, test your routes us
 
 - [Setup](./setup/README.md)
 - [Exercise](./exercise/README.md)
-
-### Course landing pages
-
-- [SEB - Software Engineering Bootcamp](https://ga-curriculum.github.io/express-api-jukebox-back-end-lab/canvas-landing-pages/seb.html)
