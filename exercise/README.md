@@ -1,5 +1,5 @@
 <h1>
-  <span class="headline">Jukebox Back-End Lab</span>
+  <span class="headline">MERN Inventory Management API Lab</span>
   <span class="subhead">Exercise</span>
 </h1>
 
