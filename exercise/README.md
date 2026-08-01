@@ -158,3 +158,5 @@ jobs:
 
       - run: npm test
 ```
+3. Go to github repo where you pushed --> settings --> secrets and variables --> actions --> New repsitory secret.
+4. In here add your test database as an environment variable
