@@ -42,7 +42,7 @@ We are building an app with the following endpoints:
 
 1. Create a controller folder and in the folder create a product.controller.js
 2. Import the model here and also import the router from express and export it at the bottom of the file. (If you don't remember the exact syntax refer to your project 2)
-3. Mount the controller in your server.js on `/products`
+3. Mount the controller in your app.js on `/products`
 
 
 ## Part 4: Creating the core endpoints
@@ -91,9 +91,22 @@ Now that we have created the model and controller file it's time to build our en
 
 
 
+## Bonus 1: Statistics Endpoints
+
+1. Add 2 more endpoints: `/low-stock` and `/statistics`
+2. The `/low-stock` endpoint should return an array of objects of all the items that are `quantity` below 3
+3. For the `/statistics` endpoint return something like this:
+```json
+{
+  "totalProducts": 82,
+  "totalValue": 54343,
+  "lowStockItems": 5
+}
+```
 
 
-## Bonus 1: Add API Tests with Supertest
+
+## Bonus 2: Add API Tests with Supertest
 
 1. Install Supertest and jest as dev dependancies:
 
@@ -112,7 +125,7 @@ Your tests should confirm your API works correctly without manually using Postma
 
 ---
 
-## Bonus 2: Add GitHub Actions CI Testing
+## Bonus 3: Add GitHub Actions CI Testing
 
 Create a GitHub Actions workflow that automatically runs your test suite whenever code is pushed.
 
@@ -120,37 +133,28 @@ Create a GitHub Actions workflow that automatically runs your test suite wheneve
 2. In this folder create a `ci.yaml` file and add the following inside:
 
 ```yaml
-name: CI
+name: Run Tests
 
 on:
   push:
     branches:
       - main
 
-  pull_request:
-    branches:
-      - main
-
 jobs:
-
   test:
-
     runs-on: ubuntu-latest
 
+    env:
+      MONGODB_URI: ${{ secrets.MONGODB_URI }}
+
     steps:
+      - uses: actions/checkout@v4
 
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Install Node
-        uses: actions/setup-node@v4
-
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - name: Install Dependencies
-        run: npm install
+      - run: npm install
 
-      - name: Run Tests
-        run: npm test
+      - run: npm test
 ```
