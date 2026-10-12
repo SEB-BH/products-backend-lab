@@ -91,7 +91,7 @@ Now that we have created the model and controller file it's time to build our en
 
 
 
-## Bonus 1: Statistics Endpoints
+## Bonus: Statistics Endpoints
 
 1. Add 2 more endpoints: `/low-stock` and `/statistics`
 2. The `/low-stock` endpoint should return an array of objects of all the items that are `quantity` below 3
@@ -103,60 +103,3 @@ Now that we have created the model and controller file it's time to build our en
   "lowStockItems": 5
 }
 ```
-
-
-
-## Bonus 2: Add API Tests with Supertest
-
-1. Install Supertest and jest as dev dependancies:
-
-```bash
-npm install --save-dev supertest jest
-```
-
-Create tests that verify:
-
-* POST creates a product.
-* GET returns products.
-* PUT updates a product.
-* DELETE removes a product.
-
-Your tests should confirm your API works correctly without manually using Postman.
-
----
-
-## Bonus 3: Add GitHub Actions CI Testing
-
-Create a GitHub Actions workflow that automatically runs your test suite whenever code is pushed.
-
-1. Create a `.github` folder and inside it create a `workflows` folder.
-2. In this folder create a `ci.yaml` file and add the following inside:
-
-```yaml
-name: Run Tests
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    env:
-      MONGODB_URI: ${{ secrets.MONGODB_URI }}
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - run: npm install
-
-      - run: npm test
-```
-3. Go to github repo where you pushed --> settings --> secrets and variables --> actions --> New repsitory secret.
-4. In here add your test database as an environment variable
