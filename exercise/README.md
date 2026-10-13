@@ -38,11 +38,11 @@ We are building an app with the following endpoints:
 5. Create the model and export it
 
 
-## Part 3: Create the controller and mount it
+## Part 3: Create the routes and mount them
 
-1. Create a controller folder and in the folder create a product.controller.js
+1. Create a routes folder and in the folder create a product.routes.js
 2. Import the model here and also import the router from express and export it at the bottom of the file. (If you don't remember the exact syntax refer to your project 2)
-3. Mount the controller in your app.js on `/products`
+3. Mount the routes in your app.js on `/products` using `app.use('/products',productsRoutes)`
 
 
 ## Part 4: Creating the core endpoints
