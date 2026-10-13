@@ -60,7 +60,7 @@ Now that we have created the model and controller file it's time to build our en
 {
   "title": "Wireless Keyboard",
   "description": "Bluetooth mechanical keyboard",
-  "category": "Electronics",
+  "category": "electronics",
   "price": 49.99,
   "quantity": 20
 }
