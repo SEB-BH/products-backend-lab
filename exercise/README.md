@@ -38,16 +38,16 @@ We are building an app with the following endpoints:
 5. Create the model and export it
 
 
-## Part 3: Create the routes and mount them
+## Part 3: Create the routes and mount it
 
 1. Create a routes folder and in the folder create a product.routes.js
 2. Import the model here and also import the router from express and export it at the bottom of the file. (If you don't remember the exact syntax refer to your project 2)
-3. Mount the routes in your app.js on `/products` using `app.use('/products',productsRoutes)`
+3. Mount the route in your app.js on `/products`
 
 
 ## Part 4: Creating the core endpoints
 
-Now that we have created the model and controller file it's time to build our endpoints. Remember to test every single route after creating it in the controllers file
+Now that we have created the model and routes file it's time to build our endpoints. Remember to test every single route after creating it in the routes file
 
 ### POST /create
 
@@ -91,7 +91,20 @@ Now that we have created the model and controller file it's time to build our en
 
 
 
-## Bonus: Statistics Endpoints
+
+## Bonus 1: Add Error Handling
+
+1. Add Error handling for validation on all the routes that require it
+
+---
+
+## Bonus 2: Refactor code to use MVC Pattern
+
+1. Create a controllers folder that contains all the functions for the route handlers
+2. export all the functions
+3. Call the functions in the routes file
+
+## Bonus 3: Statistics Endpoints
 
 1. Add 2 more endpoints: `/low-stock` and `/statistics`
 2. The `/low-stock` endpoint should return an array of objects of all the items that are `quantity` below 3
@@ -103,3 +116,5 @@ Now that we have created the model and controller file it's time to build our en
   "lowStockItems": 5
 }
 ```
+
+
